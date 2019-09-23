@@ -12,11 +12,24 @@ class Car{
     }
 }
 
+let car;
+
+beforeEach(() => {
+
+    car = new Car();
+    
+});
+
 describe('Car', () => {
 
     it('has Park Function',() =>{
 
-        const car = new Car();
-        assert.equal(car.park(), 'Stopped');
+        assert.equal(car.park(), 'stopped');
     });
+
+    it('can drive', () => {
+        
+        assert.equal(car.drive(), 'vroom');
+    });
+
 });
